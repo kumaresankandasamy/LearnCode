@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GeoLocation API Access</title>
+</head>
+<body>
+<div id="location">your location</div>
+<button onclick="getlocation()" style="color:red">click Here</button>
+</body>
+<script type="text/javascript">
+	var x = document.getElementById("location");
+	function getlocation(){
+		if (navigator.geolocation) {
+			console.log("you browser support your location");
+		}
+		else{
+			console.log("you browser not support your location");
+		}
+	}
+	
+</script>
+</html>
