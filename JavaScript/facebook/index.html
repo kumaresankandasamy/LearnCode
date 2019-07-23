@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook authentication</title>
+</head>
+<body>
+<div id="fb"></div>
+<fb : login-button onlogin = "onRequestPermisssion()" autologout = "true"></fb : login-button>
+	<button name="my_full_name" onclick="showmyname()">show name</button>
+</body>
+<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js">
+	FB.init({
+		appId : "your_applcation_id",
+		status : true,
+		cookie : true,
+		xfbml : true
+	});
+	function showmyname(){
+		FB.api("/me",
+			function(response){
+				alert("name is"+response.name);
+			});
+	}
+	
+</script>
+</html>
