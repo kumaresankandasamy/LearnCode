@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>card_image</title>
+</head>
+<body>
+	<div class="card js-card">
+		<div class="card_image">
+			<div><img src="https://source.unsplash.com/random/400x300"></div>
+			<div class="card_image_decoration">
+				<div class="label">New range</div>
+			</div>
+		</div>
+		<div class="card_content">
+			<a href="#" class="card_category">Gallery</a>
+			<h2 class="card_heading"><a href="#" class="card_link">cards</a></h2>
+		</div>
+		<div class="card_description">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua.</p>
+		</div>
+		
+	</div>
+	<ul class="card_actions">
+		<li class="card_action">
+			<a href="#" class="button">save</a>
+		</li>
+	</ul>
+</div>
+</body>
+<style type="text/css">
+body{
+	background-color: lightgrey;
+}
+.card{
+	background-color: #fff;
+	max-width: 400px;
+	border-radius: 4px;
+	overflow: hidden;
+	box-shadow: 0px 1px 4px 6px rgba(0,1,1,0);
+	transition: box-shadow 100ms cubic-bezier(1,0,1,0);
+}
+.card:hover{
+	box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2);
+}
+.card_image{
+	position: relative;
+}
+.card_image:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	clip-path: circle(0% at var(--mouse-x,0) var(--mouse-y,0));
+	opacity: 0;
+}
+.card_image_decoration{
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	color: black;
+}
+.card_content{
+	padding: 20px;
+}
+.card_category{
+	color: red;
+	font-size: 16px;
+	line-height: 20px;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.card_link{
+	text-decoration: none;
+	position: static;
+	color: inherit;
+	z-index: 1;
+}
+.card_link:before{
+	content: '';
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+}
+.card_category,.card_action{
+	position: relative;
+	z-index: 1;
+}
+.card_description{
+	margin-top: 16px;
+}
+.card_description > * + * {
+	margin-top: 16px;
+}
+.card_actions{
+	display: block;
+	width: 100%;
+	border-top: 1px solid grey;
+}
+.card_actions{
+	display: inline-block;
+
+}
+.button{
+	display: inline-block;
+	background-color: #fff;
+	text-decoration: none;
+	color: blue;
+	padding: 10px 10px;
+	font-size: 16px;
+	line-height: 16px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.button-hover,.button-focus,.button-active{
+    color:  #343639;
+    outline: 0;
+}
+
+.label{
+	background-color: #2c436d;
+	color: #fff;
+	padding: 4px 8px;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.responsive-media{
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 100%;
+	text-align: center;
+}
+.responsive-media > img{
+	width: 100%;
+}
+.responsive-media--widescreen{
+	padding-bottom: 50%;
+}
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+html{
+	box-sizing: border-box;
+}
+*,*:before,*:after{
+	box-sizing: inherit;
+	margin: 0.5px;
+	padding: 0.5px;
+}
+html,body{
+	height: 100%;
+}
+body{
+	display:block;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	background: linear-gradient(#e9f2f5, #cee0e7);
+	font-family: 'Roboto';
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	font-size: 16px;
+	line-height: 16px;
+}
+img{
+	border: 0;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	vertical-align: bottom;
+}
+</style>
+<script type="text/javascript">
+	const root = document.documentElemenet
+	const cards = [...document.querySelectorAll('js-card')]
+	function updateCssVars(e){
+		const dimensions = e.target.getBoundingClientRect()
+		console.log(dimensions)
+		root.style.setProperty('--mouse-x', `${e.clientX - dimensions.x}px`)
+		root.style.setProperty('--mouse-y', `${e.clientY - dimensions,y}px`)
+	}
+	cards.forEach(card =>{
+		card.addEventListener('mouseenter',updateCssVars)
+		card.addEventListener('mouseleave',updateCssVars)	})
+</script>
+</html>
