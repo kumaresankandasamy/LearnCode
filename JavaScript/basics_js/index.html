@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p id="paragraph"></p>
+</body>
+<script type="text/javascript">
+	var para = document.getElementById("paragraph").textContent = "Hello, Welcome";
+	var addparaTag = document.createElement('p');
+	addparaTag.textContent = "javascript basics";
+	document.body.appendChild(addparaTag);
+	var addparaTag1 = document.createElement('p');
+    addparaTag1.textContent = "learn everything";
+    document.body.appendChild(addparaTag1);
+
+    window.alert("meassge");
+    window.alert("please connect internet");
+
+    alert("Awesome");
+    console.log("alert was dissmissed");
+
+    window.confirm("meassge");
+    if(window.confirm("Are you sure delete the message")){
+    	delete(meassge);
+    }
+
+    var canvas = document.createElement('canvas');
+    canvas.width = 500;
+    canvas.height = 500;
+var ctx = canvas.getContext('2d');
+ctx.font = '20px cursive';
+ctx.fillText("Hello world!",100,100);
+document.body.appendChild(canvas);
+
+var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+svg.width = 500;
+svg.height = 50;
+var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+text.setAttribute('x','0');
+text.setAttribute('y','0');
+text.style.fontfamily = "Times New Roman";
+text.style.fontsize = 50;
+text.textContent = 'Hello, World';
+svg.appendChild(text);
+document.body.appendChild(svg);
+
+var img = new Image();
+img.src ='https://i.ytimg.com/vi/zecueq-mo4M/maxresdefault.jpg';
+document.body.appendChild(img);
+
+var img1 = new Image();
+img1.src = 'https://i.ytimg.com/vi/zecueq-mo4M/maxresdefault.jpg';
+document.body.appendChild(img);
+
+var name = 'ram';
+var number = 1;
+console.log(name);
+window.alert("name");
+
+//array
+
+var array = [];
+var array1 = ["apple","orange","straberry"];
+var array2 = [1,2,3,4,5,6,7,8,9];
+var array3 = [1,"apple",2,"orange",3,"straberry",4];
+window.alert(array1[0]);
+window.alert(array3[4]);
+
+var obj = {};
+
+var obj1 ={
+name : "john",
+age : 28
+};
+console.log(obj1);
+window.alert(obj1.name);
+
+var a = null;
+a===null; //true
+
+isNaN(NaN) // true
+isNaN(1) // false
+
+NaN == NaN // false
+NaN === NaN // false
+
+//return NaN
+Math.floor("a");
+Math.sqrt(-1);
+
+
+
+
+
+
+
+
+	
+</script>
+</html>
