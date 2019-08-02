@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p>welcome</p>
+</body>
+<script type="text/javascript">
+	
+	function sum(...arguments){
+		if(arguments.length === 1){
+			const[firstarg] = arguments;
+			if (firstarg instanceof Array) {
+				return sum(...firstarg);
+			}
+
+		}
+		return arguments.reduce((a,b)=> a+b);
+	}
+	console.log(sum(1,4));
+	console.log(sum(1,3,4));
+
+	//notes
+
+console.log([] instanceof Object);
+
+console.log([] instanceof Array);
+
+function isNumber(value){
+	if (value == null || value == undefined) {
+		return false;
+	}
+	return value.constructor == Number;
+}
+console.log(isNumber(null),isNumber(undefined));
+
+
+function reverseString(str){
+	return str.split('').reverse().join('');
+
+}
+reverseString('string');
+
+//reverse string
+
+function revString(string){
+	var reverse = "";
+	for(var i = string.length-1;i>=0;i++){
+		strRev += string[i];
+	}
+	return strRev;
+}
+reverseString("welcome");
+
+//compare
+
+var a = "hello";
+var b ="world";
+console.log(a.localeCompare(b)); //-1
+
+
+function strcmp(a, b) {
+if(a === b) {
+return 0;
+}
+if (a > b) {
+return 1;
+}
+return -1;
+}
+console.log(strcmp("hello", "world")); // -1
+console.log(strcmp("hello", "hello")); // 0
+console.log(strcmp("world", "hello")); // 1
+
+var arr = ["bananas", "cranberries", "apples"];
+arr.sort(function(a,b){
+	return a.localeCompare(b);
+});
+console.log(arr);
+
+
+</script>
+
+</html>

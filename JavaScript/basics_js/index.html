@@ -106,9 +106,50 @@ console.log('loop time');
 
 console.log('%c Hello, World','color:red;font-size:16px');
 
+//trace()
+
+function foo(){
+	console.trace("my log statement");
+}
+foo();
+
+
+console.table(["hello","world"]);
+
+var person = [
+{
+	"id" : 1,
+	"name" : "jhon",
+	"city" : "bangalore",
+	"phone" : "1234567890"
+},{
+	"id" : 2,
+	"name" : "jhon",
+	"city" : "bangalore",
+	"phone" : "1234567890"
+},{
+	"id" : 3,
+	"name" : "jhon",
+	"city" : "bangalore",
+	"phone" : "1234567890"
+}
+];
+console.table(person,['name','id','city']);
+
+console.count();
+console.count('');
+console.count("");
+
+var object = {
+	"foo" :{
+		"boo" : "dats"
+	}
+};
+console.dir(object);
+console.dirxml(object);
+console.log(object);
 
 
 
-	
 </script>
 </html>
