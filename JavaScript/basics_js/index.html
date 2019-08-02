@@ -90,9 +90,21 @@ NaN === NaN // false
 Math.floor("a");
 Math.sqrt(-1);
 
+console.time('response in');
+alert("click");
+console.timeEnd('response in');
 
 
+var time = document.getElementsByTagName('*');
+console.time('response');
+for(var i=0; i<5000 ;i++){
+	for(var j=0;length = time.length,j<length;j++){
+		console.log("time in");
+	}
+}
+console.log('loop time');
 
+console.log('%c Hello, World','color:red;font-size:16px');
 
 
 
