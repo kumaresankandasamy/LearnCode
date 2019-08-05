@@ -84,6 +84,14 @@ console.log(arr);
 var now = new Date();
 now.toString();
 
+var options ={
+	weekday : 'long',
+	year : 'numeric',
+	month : 'long',
+	day : 'numeric'};
+now.toLocaleDateString([],options);
+
+
 
 </script>
 
