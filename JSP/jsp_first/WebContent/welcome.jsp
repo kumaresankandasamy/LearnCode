@@ -11,7 +11,7 @@ String user = request.getParameter("user");
 %>
 <body>
 
-Hello, <% out.println(user);%>
+Hello, welcome <% out.println(user);%>
 
 </body>
 </html>
